@@ -1,12 +1,18 @@
 # 漢文版本說明
-這是一個極其簡單的python腳本，基於OpenAI API以及Python語言。只要你使用API運行AI，並且有Python環境，就可以運行這一腳本。注意pip install 必要的庫。這些庫python文件中的import上有記，庫並不多，非常簡單。
+這是一個極其簡單的python腳本，基於OpenAI API以及Python語言。只要你使用API運行AI，並且有Python環境，就可以運行這一腳本。注意pip install 必要的庫。這些庫python文件中的import上有記，其中必要的依賴庫包括：
+
+  - openai
+  - os
+  - json 
+
+至於剩下的**azure.cognitiveservices.speech**和**datetime**如果不需要這些功能直接開python刪掉就行，還可以讓腳本更簡單一點。
 
 該腳本用來處理AI模型中多輪對話的「遺忘」問題。我知道MemGPT就這個問題提出非常Cool的方案，所以我並不指望這個腳本能幫助我找到工作，解決現在的失業問題。但至少，這個方案可以讓我得到一個更可靠的AI助手，而且它足夠簡單，這就夠了。
 
 ### THE MODE
 文件中有Mod1、Mod2這樣的編號，每一個Mod文件夾對應一個json文件，可以通過API訪問支援OpenAI的生成式人工智障伺服器，每一個文件夾都是一個獨立的persona「AI智慧體」。每一次使用python進行AI輸出，都可以將內容生成到後面的json文件中，json文件可以通過vim隨時修改，其中的文本可以隨時刪除、更改、和增添。這樣可以用一種極爲簡單的方式隨時管理AI的記憶。
 
-我使用這個腳本時基於的是Moonshot AI，如果你使用的是其他AI廠商，請酌情修改代碼。
+我使用這個腳本時基於的是Moonshot AI，如果你使用的是其他AI廠商，請酌情修改代碼。AI後面有Azure的語音輸出，如果不需要可以直接刪除，具體看註釋。
 
 雖然文件格式是json，但命名不一定必須是something.json，你可以在python裏選擇你喜歡的文件名稱，範例參考Mod2文件夾的Monika.py文件。
 
@@ -21,10 +27,19 @@
 
 由於本模型極端簡單，所以複製貼上也很方便，在一臺現代電腦中，你完全可以複製貼上的100個這樣的文件，並實現你的AI數據管理。
 
+如果你需要客製化這個腳本，下載之後自由修改就可以。如果你有優化建議，請聯繫ZoengGwanwei@outlook.com，儘管作爲未畢業的學生我的編碼水平非常有限，但我也很希望能夠將這個工具進一步優化，在保留其簡便特性的同時，爲使用者帶來更舒適的AI體驗。
+
+
 # The English Manner 
 **I am sorry that is an AI Translation, if you can not understand what I say, please learn Chinese.**
 
-This is an extremely simple Python script based on the OpenAI API and the Python language. As long as you have an API to run AI and a Python environment, you can run this script. Note that you need to install the necessary libraries using pip install. The libraries are listed in the import statements in the Python file, and there are not many of them, so it's very simple.
+This is an extremely simple Python script based on the OpenAI API and the Python language. As long as you have an API to run AI and a Python environment, you can run this script. Note that you need to install the necessary libraries using pip install. The libraries are listed in the import statements in the Python file, and there are not many of them, so it's very simple. The necessary dependencies include:
+
+  - openai
+  - os
+  - json
+
+The **azure.cognitiveservices.speech** and **datetime** is not necessary, you can delete it if you are not want to know what time now or use the Microsoft TTS service.
 
 The script is designed to address the "forgetfulness" issue in multi-turn conversations within AI models. I know that MemGPT has proposed a very cool solution for this problem, so I don't expect this script to help me find a job or solve my current unemployment issue. However, at least this solution can provide me with a more reliable AI assistant, and its simplicity is enough for me.
 ### THE MODE
@@ -41,3 +56,5 @@ In fact, JSON files can also support multiple read operations. However, I haven'
 Since this model does not have a designed algorithm, management is entirely manual. When your API cannot handle a large memory load, your API provider will often remind you of the context token limit supported by your AI. You need to calculate this yourself. You can open the JSON file (e.g., Mod2 is Monika.chr file) with a basic text editor and edit the conversation memory as needed. If you need to store this memory, create a new folder called Long_Memory and temporarily store these JSON files there. When you need to use them again, simply create a new folder.
 
 Because this model is extremely simple, copying and pasting is also very convenient. On a modern computer, you can easily copy and paste up to 100 of these files and manage your AI data effectively.
+
+If you need to customize this script, you can freely modify it after downloading. If you have any suggestions for optimization, please contact ZoengGwanwei@outlook.com. Although my coding skills are quite limited as a student who has not yet graduated, I am also very eager to further optimize this tool. I hope to bring a more comfortable AI experience to users while retaining its simplicity.
