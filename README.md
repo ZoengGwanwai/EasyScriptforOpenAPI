@@ -52,10 +52,12 @@ Although the file format is JSON, the naming does not have to be something.json.
 The assistant supports using multiple Mod files to read the memory from the same JSON file. These files are stored in the same folder, which you can think of as different API functional interfaces for an AI persona. If you use multiple different APIs, such as Text Processing API01 and Visual Processing API02, you can add Python files and have them read from the same JSON file to achieve this functionality.
 ### THE MEMORY_MANAGER
 The Python program used to manage the AI database operates through four mechanisms:
+
  1. Inputting "text" to form the database by using AddTag.
  2. Retrieving data from the database based on "text" or "tags."
  3. Outputting the retrieval results to form a "virtual context" dialogue text.
  4. The AI responds based on the virtual context.
+
 For detailed reference, please see the manner.md file in the /AIchat/Memory_Manager section.
 ### Management Announcement
 Since this model does not have a designed algorithm, management is entirely manual. When your API cannot handle a large memory load, your API provider will often remind you of the context token limit supported by your AI. You need to calculate this yourself. You can open the JSON file (e.g., Mod2 is Monika.chr file) with a basic text editor and edit the conversation memory as needed. If you need to store this memory, create a new folder called Long_Memory and temporarily store these JSON files there. When you need to use them again, simply create a new folder.
