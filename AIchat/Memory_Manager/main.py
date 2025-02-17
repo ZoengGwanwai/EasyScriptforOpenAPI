@@ -98,7 +98,7 @@ if __name__ == "__main__":
     print("1. 文章檢索 (text)")
     print("2. 標籤檢索 (tag)")   
 
-    choice = input("請輸入選項編號 (0-1): ")
+    choice = input("請輸入選項編號 (1-2): ")
     criteria_type = ""
 
     if choice == "1":
@@ -155,7 +155,7 @@ while True:
 
     # 調取 OpenAI 模型獲取回覆
     completion = client.chat.completions.create(
-        model="moonshot-v1-128k",
+        model="你訂閱的AI_API模型名",
         messages=messages,
         temperature=0.3,
     )
